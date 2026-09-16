@@ -1,0 +1,62 @@
+import { Mapper } from "@dev-waren/react-form-kit";
+import { Link } from "@tanstack/react-router";
+import moment from "moment-timezone";
+
+const links = [
+	{
+		label: "Home",
+		link: "/",
+	},
+	{
+		label: "About",
+		link: "/about",
+	},
+	{
+		label: "Work",
+		link: "/work",
+	},
+	{
+		label: "Projects",
+		link: "/projects",
+	},
+	{
+		label: "Get in Touch",
+		link: "/get-in-touch",
+	},
+];
+
+export default function Navbar() {
+	const manilaTime = moment().tz("Asia/Manila").format("D MMM — HH:mm z");
+
+	return (
+		<div className="border-b border-b-gray-200 p-4 flex items-center justify-between sticky top-0 bg-white z-90">
+			<div>
+				<p className="text-gray-600 font-semibold text-2xl">
+					Waren<span className="text-gray-900">.dev</span>
+				</p>
+
+				<p className="text-gray-400 text-sm">{manilaTime}</p>
+			</div>
+			<Mapper
+				listFor="nav-links"
+				items={links}
+				className="text-gray-500 space-x-4 transition-all duration-500 ease-in"
+			>
+				{(link) => (
+					<Link
+						to={link.link}
+						className="hover:text-gray-600"
+						activeProps={{
+							className: "text-gray-900 font-semibold",
+						}}
+						inactiveProps={{
+							className: "text-gray-400",
+						}}
+					>
+						{link.label}
+					</Link>
+				)}
+			</Mapper>
+		</div>
+	);
+}
