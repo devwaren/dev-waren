@@ -13,8 +13,8 @@ const links = [
 		link: "/about",
 	},
 	{
-		label: "Work",
-		link: "/work",
+		label: "Docs",
+		link: "/docs",
 	},
 	{
 		label: "Projects",
