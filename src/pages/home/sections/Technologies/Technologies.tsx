@@ -14,10 +14,8 @@ export default function Technologies() {
 					</div>
 
 					<h2 className="text-4xl font-medium leading-[1.1] tracking-[-0.04em] text-gray-900 sm:text-5xl">
-						Tools I{" "}
-						<span className="text-gray-400">
-							use to build modern web applications.
-						</span>
+						Tools I <span className="text-gray-400">use to build modern </span>
+						<span className="text-gray-600"> web applications.</span>
 					</h2>
 				</div>
 

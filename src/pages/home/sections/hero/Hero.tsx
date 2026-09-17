@@ -37,11 +37,6 @@ export default function Hero() {
 			</div>
 			<div className="flex-1 rounded-b-4xl overflow-hidden relative">
 				<img src={assets.devwaren} alt="dev-waren" />
-				<img
-					src={assets.devwaren}
-					alt="dev-waren"
-					className="absolute left-[-5%] size-full top-0 -z-1 opacity-20"
-				/>
 			</div>
 		</div>
 	);

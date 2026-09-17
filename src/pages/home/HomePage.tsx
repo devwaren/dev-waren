@@ -1,5 +1,12 @@
 import { AnimatedCursor } from "./components";
-import { Hero, NpmPackages, SelectedProjects, Technologies } from "./sections";
+import {
+	About,
+	GetInTouch,
+	Hero,
+	NpmPackages,
+	SelectedProjects,
+	Technologies,
+} from "./sections";
 
 export default function HomePage() {
 	return (
@@ -9,6 +16,8 @@ export default function HomePage() {
 			<NpmPackages />
 			<AnimatedCursor />
 			<Technologies />
+			<About />
+			<GetInTouch />
 		</div>
 	);
 }
