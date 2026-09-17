@@ -139,9 +139,12 @@ import { useInput } from "@dev-waren/react-form-kit/hook-form"
 type Props = ComponentProps<"input">;
 
 export default function Input(props: Props) {
-  const { register } = useInput(props.name);
+  const { register, isError, error } = useInput(props.name);
 
-  return <input {...register} {...props} />;
+  return (<div className="space-y-2">
+            <input {...register} {...props} />
+            { isError && <p className="text-red-600">{ error }</p>}
+        </div>)
 }`}
 						</CodeBlock>
 
