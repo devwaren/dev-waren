@@ -147,9 +147,9 @@ export default function Input(props: Props) {
 
 						<CodeBlock file="Login.tsx">
 							{`import {
-  Form,
   Mapper,
 } from "@dev-waren/react-form-kit";
+ import { Form } from "@dev-waren/react-form-kit/hook-form";
 
 import Input from "./components/Input";
 import { fields } from "./fields";
