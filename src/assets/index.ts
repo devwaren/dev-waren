@@ -1,3 +1,4 @@
+import devw from "./devw.webp";
 import devwaren from "./devwaren.webp";
 import dogranch from "./dogranch.png";
 import magic from "./magic.png";
@@ -10,4 +11,5 @@ export const assets = {
 	devlogo,
 	movie,
 	dogranch,
+	devw,
 };

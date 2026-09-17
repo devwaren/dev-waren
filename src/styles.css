@@ -196,3 +196,19 @@ body {
 		cursor: auto !important;
 	}
 }
+
+.grayscale-overlay {
+	--split-angle: 32deg;
+
+	mask-image: conic-gradient(
+		from var(--split-angle) at 50% 50%,
+		transparent 0deg 180deg,
+		black 180deg 360deg
+	);
+
+	-webkit-mask-image: conic-gradient(
+		from var(--split-angle) at 50% 50%,
+		transparent 0deg 180deg,
+		black 180deg 360deg
+	);
+}
