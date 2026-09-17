@@ -25,7 +25,7 @@ export default function GetInTouch() {
 				</div>
 
 				<div className="relative">
-					<div className="absolute w-full z-[-1] -rotate-45 left-[-60%] -top-[150%] text-gray-300">
+					<div className="absolute w-full z-[-1] -rotate-45 left-[-60%] top-[-150%] text-gray-300">
 						<PiPaperPlaneDuotone size={250} />
 					</div>
 					<Link

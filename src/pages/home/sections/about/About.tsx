@@ -29,7 +29,7 @@ const details = [
 export default function About() {
 	return (
 		<div className="flex border-t py-8 items-end-safe gap-6">
-			<div className="flex-1 space-y-4">
+			<div className="flex-1 space-y-8">
 				<p className="text-gray-600 uppercase tracking-widest">About</p>
 				<h2 className="text-4xl text-gray-500 max-w-[80%] leading-12">
 					<span className="text-gray-800">A Developer</span> who cares about
@@ -44,7 +44,7 @@ export default function About() {
 
 				<button
 					type="button"
-					className="px-4 py-3 border border-gray-400 text-gray-600 rounded-md flex items-center gap-2"
+					className="px-4 py-3 border border-gray-400 text-gray-600 rounded-md flex items-center gap-2 mt-3"
 				>
 					More about me
 					<span>
