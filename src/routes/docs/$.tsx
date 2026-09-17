@@ -11,5 +11,7 @@ function RouteComponent() {
 	switch (_splat) {
 		case "package=react-form-kit":
 			return <ReactFormKit />;
+		default:
+			return <p>Coming Soon!...</p>;
 	}
 }

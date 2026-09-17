@@ -134,6 +134,7 @@ const useLoginForm = () => {
 
 						<CodeBlock file="components/Input.tsx">
 							{`import type { ComponentProps } from "react";
+import { useInput } from "@dev-waren/react-form-kit/hook-form"
 
 type Props = ComponentProps<"input">;
 

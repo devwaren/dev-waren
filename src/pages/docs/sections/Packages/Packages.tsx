@@ -3,26 +3,26 @@ import { ArrowUpRight } from "lucide-react";
 
 const packages = [
 	{
-		name: "@dev-waren/react-form-kit",
+		name: "react-form-kit",
 		description: "Reusable form utilities for modern React applications.",
 		version: "v1.4.19",
 		category: "React",
 		includes: ["form kits", "Zod", "Zustand"],
 	},
 	{
-		name: "@dev-waren/mongodb",
+		name: "mongodb",
 		description: "Typed MongoDB utilities for Server Only applications.",
 		version: "v1.0.0",
 		category: "Database",
 		includes: ["Mongodb"],
 	},
-	{
-		name: "@dev-waren/vanilla-ts",
-		description: "Single Page application for vanilla typescript",
-		version: "v1.0.0",
-		category: "Framework",
-		includes: ["Typescript", "Tailwindcss"],
-	},
+	// {
+	// 	name: "vanilla-ts",
+	// 	description: "Single Page application for vanilla typescript",
+	// 	version: "v1.0.0",
+	// 	category: "Framework",
+	// 	includes: ["Typescript", "Tailwindcss"],
+	// },
 ];
 
 export default function Packages() {
@@ -57,7 +57,7 @@ export default function Packages() {
 					{(pkg, i) => (
 						<a
 							key={pkg.name}
-							href={`https://www.npmjs.com/package/${pkg.name}`}
+							href={`docs/package=${pkg.name}`}
 							className="group flex flex-col gap-6 py-8 transition md:flex-row md:items-center md:justify-between"
 						>
 							<div className="flex items-start gap-6">
