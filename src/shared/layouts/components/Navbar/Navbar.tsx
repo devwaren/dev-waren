@@ -1,6 +1,7 @@
 import { Mapper } from "@dev-waren/react-form-kit";
 import { Link } from "@tanstack/react-router";
 import moment from "moment-timezone";
+import { assets } from "#/assets/index.ts";
 
 const links = [
 	{
@@ -30,12 +31,14 @@ export default function Navbar() {
 
 	return (
 		<div className="border-b border-b-gray-200 p-4 flex items-center justify-between sticky top-0 bg-white z-90">
-			<div>
-				<p className="text-gray-600 font-semibold text-2xl">
-					Waren<span className="text-gray-900">.dev</span>
-				</p>
-
-				<p className="text-gray-400 text-sm">{manilaTime}</p>
+			<div className="flex gap-4">
+				<img src={assets.devlogo} alt="dev logo" className="w-8 h-8" />
+				<div>
+					<p className="text-gray-600 font-semibold text-2xl">
+						Waren<span className="text-gray-900">.dev</span>
+					</p>
+					<p className="text-gray-400 text-sm">{manilaTime}</p>
+				</div>
 			</div>
 			<Mapper
 				listFor="nav-links"

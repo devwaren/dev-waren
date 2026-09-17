@@ -3,7 +3,7 @@ import { assets } from "#/assets/index.ts";
 
 export default function Hero() {
 	return (
-		<div className="min-h-[30em] overflow-hidden flex items-center ">
+		<div className="min-h-[30em] overflow-hidden flex items-center">
 			<div className="flex-1 space-y-8">
 				<div className="max-w-[90%] text-gray-400 text-5xl leading-[1.2em]">
 					<p>
@@ -35,8 +35,13 @@ export default function Hero() {
 					</button>
 				</div>
 			</div>
-			<div className="flex-1 rounded-b-4xl overflow-hidden ">
+			<div className="flex-1 rounded-b-4xl overflow-hidden relative">
 				<img src={assets.devwaren} alt="dev-waren" />
+				<img
+					src={assets.devwaren}
+					alt="dev-waren"
+					className="absolute left-[-5%] size-full top-0 -z-1 opacity-20"
+				/>
 			</div>
 		</div>
 	);

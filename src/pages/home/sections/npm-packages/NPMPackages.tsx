@@ -1,3 +1,4 @@
+import { Mapper } from "@dev-waren/react-form-kit";
 import { ExternalLink, Form, IceCreamCone, Leaf } from "lucide-react";
 
 const packages = [
@@ -39,7 +40,7 @@ const packages = [
 
 export default function NpmPackages() {
 	return (
-		<section className="border-t border-gray-200 py-8">
+		<section className="border-t border-gray-200 pt-8">
 			<div className="mb-12 flex items-end justify-between">
 				<div>
 					<p className="mb-3 text-sm font-medium uppercase tracking-widest text-gray-400">
@@ -65,8 +66,12 @@ export default function NpmPackages() {
 				</a>
 			</div>
 
-			<div className="divide-y divide-gray-200 border-y border-gray-200">
-				{packages.map((pkg) => (
+			<Mapper
+				listFor="packages"
+				items={packages}
+				className="divide-y divide-gray-200 border-y border-gray-200"
+			>
+				{(pkg) => (
 					<div
 						key={pkg.name}
 						className="group grid gap-6 py-8 md:grid-cols-[1fr_1.5fr_auto] md:items-center"
@@ -111,8 +116,8 @@ export default function NpmPackages() {
 							</a>
 						</div>
 					</div>
-				))}
-			</div>
+				)}
+			</Mapper>
 		</section>
 	);
 }

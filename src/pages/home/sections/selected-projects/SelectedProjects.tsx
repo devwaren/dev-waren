@@ -6,9 +6,9 @@ import { assets } from "#/assets/index.ts";
 
 const projects = [
 	{
-		title: "Magic 89.9 Website",
+		title: "Magic 89.9 ",
 		description:
-			"A modern radio station website with live streaming, shows, news, and interactive features.",
+			"A full-featured radio station platform with live streaming, show schedules, news publishing, interactive polls, and a dynamic content experience.",
 		image: assets.magic,
 		technologies: [
 			"React",
@@ -19,18 +19,18 @@ const projects = [
 		],
 	},
 	{
-		title: "GSNet System",
+		title: "Dog Ranch",
 		description:
-			"Internet service management platform for customer management, billing, and network monitoring.",
-		image: "/images/projects/gsnet.webp",
-		technologies: ["React", "TypeScript", "TanStack Query", "MongoDB"],
+			"A modern pet-focused web platform designed to showcase dog-related services, information, and an engaging user experience.",
+		image: assets.dogranch,
+		technologies: ["Vanilla-ts", "TypeScript", "TanStack Query", "MongoDB"],
 	},
 	{
-		title: "TaskFlow",
+		title: "TFlix",
 		description:
-			"A minimalist productivity application for task and project management.",
-		image: "/images/projects/taskflow.webp",
-		technologies: ["React", "Zustand", "Tailwind CSS", "PWA"],
+			"A lightweight movie discovery platform featuring movie details, latest releases, and a clean, responsive browsing experience.",
+		image: assets.movie,
+		technologies: ["Vanilla-ts", "Zustand", "Tailwind CSS"],
 	},
 ];
 
@@ -38,6 +38,7 @@ export default function SelectedProjects() {
 	const [emblaRef] = useEmblaCarousel({
 		loop: true,
 		align: "start",
+		active: true,
 	});
 
 	return (
@@ -76,12 +77,14 @@ export default function SelectedProjects() {
 				>
 					{(project) => (
 						<div className="grid min-w-0 flex-[0_0_100%] grid-rows-1 pl-3 sm:flex-[0_0_50%] lg:flex-[0_0_33.333%]">
-							<div className="grid h-full grid-rows-[auto_1fr] rounded-md border bg-white shadow-sm overflow-hidden">
-								<img
-									src={project.image}
-									alt={project.title}
-									className="aspect-video w-full object-cover"
-								/>
+							<div className="grid h-full grid-rows-[auto_1fr] rounded-md border bg-white shadow-sm overflow-hidden group">
+								<div className="overflow-hidden">
+									<img
+										src={project.image}
+										alt={project.title}
+										className="aspect-video w-full object-cover group-hover:scale-110 transition duration-300 ease-in-out"
+									/>
+								</div>
 
 								<div className="grid grid-rows-[auto_auto_1fr] gap-3 p-5">
 									<h3 className="text-xl font-semibold">{project.title}</h3>
