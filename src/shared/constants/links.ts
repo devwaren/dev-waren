@@ -11,10 +11,10 @@ export const links = [
 		label: "Docs",
 		link: "/docs",
 	},
-	{
-		label: "Projects",
-		link: "/projects",
-	},
+	// {
+	// 	label: "Projects",
+	// 	link: "/projects",
+	// },
 	{
 		label: "Get in Touch",
 		link: "/get-in-touch",
