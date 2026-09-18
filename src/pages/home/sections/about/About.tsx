@@ -1,4 +1,5 @@
 import { Mapper } from "@dev-waren/react-form-kit";
+import { Link } from "@tanstack/react-router";
 import { MoveRight, Package, PersonStandingIcon } from "lucide-react";
 import { BiBulb } from "react-icons/bi";
 import { BsSpeedometer } from "react-icons/bs";
@@ -42,15 +43,16 @@ export default function About() {
 					clean design, solid security best practices and engineering.
 				</p>
 
-				<button
+				<Link
+					to="/about"
 					type="button"
-					className="px-4 py-3 border border-gray-400 text-gray-600 rounded-md flex items-center gap-2 mt-3"
+					className="px-4 py-3 border border-gray-400 text-gray-600 rounded-md flex items-center gap-2 mt-3 w-fit"
 				>
 					More about me
 					<span>
 						<MoveRight />
 					</span>
-				</button>
+				</Link>
 			</div>
 			<div className="flex-1">
 				<Mapper
