@@ -1,6 +1,7 @@
 import { ExternalLink, Heart, Star } from "lucide-react";
 import { useState } from "react";
 import { Formik } from "./formik/Formik";
+import { useFormHook } from "./hooks";
 import { ReactHookForm } from "./react-hook-form/react-hook-form";
 
 const references = [
@@ -39,12 +40,28 @@ type StackKey = keyof typeof stacks;
 export default function ReactFormKit() {
 	const [formStack, setFormStack] = useState<StackKey>("react-hook-form");
 
+	const {
+		sectionRef,
+		headerRef,
+		contentRef,
+		documentationRef,
+		animateDocumentation,
+	} = useFormHook();
+
 	const selectedStack = stacks[formStack];
 	const Documentation = selectedStack.Component;
 
+	const handleStackChange = (key: StackKey) => {
+		setFormStack(key);
+
+		requestAnimationFrame(() => {
+			animateDocumentation();
+		});
+	};
+
 	return (
-		<section className="mx-auto max-w-4xl px-6 py-24">
-			<header className="mb-20">
+		<section ref={sectionRef} className="mx-auto max-w-4xl px-6 py-24">
+			<header ref={headerRef} className="mb-20">
 				<p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-neutral-400">
 					Package Documentation
 				</p>
@@ -87,7 +104,7 @@ export default function ReactFormKit() {
 				</div>
 			</header>
 
-			<div className="space-y-20">
+			<div ref={contentRef} className="space-y-20">
 				{/* Stack selector */}
 				<div className="flex flex-wrap items-center justify-between gap-4">
 					<div>
@@ -100,7 +117,7 @@ export default function ReactFormKit() {
 						</p>
 					</div>
 
-					<div className="flex rounded-lg border border-neutral-200 p-1 dark:border-neutral-800 gap-1">
+					<div className="flex gap-1 rounded-lg border border-neutral-200 p-1 dark:border-neutral-800">
 						{(Object.keys(stacks) as StackKey[]).map((key) => {
 							const isActive = formStack === key;
 
@@ -108,10 +125,10 @@ export default function ReactFormKit() {
 								<button
 									key={key}
 									type="button"
-									onClick={() => setFormStack(key)}
+									onClick={() => handleStackChange(key)}
 									aria-pressed={isActive}
 									className={[
-										"rounded-md px-3 py-2 text-sm transition",
+										"rounded-md px-3 py-2 text-sm transition hover:bg-gray-200 hover:text-black cursor-pointer",
 										isActive
 											? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-900"
 											: "text-neutral-500 hover:text-neutral-950 dark:hover:text-white",
@@ -125,7 +142,9 @@ export default function ReactFormKit() {
 				</div>
 
 				{/* Dynamic documentation */}
-				<Documentation />
+				<div ref={documentationRef}>
+					<Documentation />
+				</div>
 
 				{/* Support */}
 				<section className="border-t border-neutral-200 pt-10 dark:border-neutral-800">
@@ -182,7 +201,7 @@ export default function ReactFormKit() {
 								href={reference.href}
 								target="_blank"
 								rel="noreferrer"
-								className="group flex items-center justify-between rounded-xl border border-neutral-200 px-4 py-4 transition hover:border-neutral-400 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:border-neutral-600 dark:hover:bg-neutral-900/50"
+								className="reference-card group flex items-center justify-between rounded-xl border border-neutral-200 px-4 py-4 transition hover:border-neutral-400 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:border-neutral-600 dark:hover:bg-neutral-900/50"
 							>
 								<div>
 									<p className="text-sm font-medium text-neutral-900 dark:text-neutral-200">
@@ -202,9 +221,9 @@ export default function ReactFormKit() {
 						))}
 					</div>
 
-					<div className="mt-8 text-xs text-neutral-400 flex gap-2 items-center">
+					<div className="mt-8 flex items-center gap-2 text-xs text-neutral-400">
 						React Form Kit is part of the open-source React ecosystem. made with{" "}
-						<Heart />
+						<Heart size={14} />
 					</div>
 				</footer>
 			</div>
