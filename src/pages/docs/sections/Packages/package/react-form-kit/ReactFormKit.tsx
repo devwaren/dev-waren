@@ -8,7 +8,7 @@ const CodeBlock = ({ file, children }: { file: string; children: string }) => {
 			</div>
 
 			<pre className="overflow-x-auto p-5 font-mono text-sm leading-7 text-neutral-300">
-				<code className="text-gray-400">{children}</code>
+				<code className="text-gray-400 text-xs md:text-sm">{children}</code>
 			</pre>
 		</div>
 	);
@@ -16,7 +16,7 @@ const CodeBlock = ({ file, children }: { file: string; children: string }) => {
 
 export default function ReactFormKit() {
 	return (
-		<section className="mx-auto max-w-4xl px-6 py-24">
+		<section className="mx-auto max-w-4xl md:px-6 py-24">
 			{/* Header */}
 			<header className="mb-16">
 				<p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-neutral-400">
