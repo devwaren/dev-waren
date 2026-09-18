@@ -1,29 +1,55 @@
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Heart, Star } from "lucide-react";
+import { useState } from "react";
+import { Formik } from "./formik/Formik";
+import { ReactHookForm } from "./react-hook-form/react-hook-form";
 
-const CodeBlock = ({ file, children }: { file: string; children: string }) => {
-	return (
-		<div className="mt-5 overflow-hidden rounded-xl border border-neutral-200 bg-neutral-950 dark:border-neutral-800">
-			<div className="flex items-center border-b border-white/10 px-4 py-2.5">
-				<span className="font-mono text-[11px] text-neutral-500">{file}</span>
-			</div>
+const references = [
+	{
+		name: "Zod",
+		description: "TypeScript-first schema validation",
+		href: "https://zod.dev",
+	},
+	{
+		name: "React Hook Form",
+		description: "Performant, flexible form state management",
+		href: "https://react-hook-form.com",
+	},
+	{
+		name: "Formik",
+		description: "Build forms in React with ease",
+		href: "https://formik.org",
+	},
+];
 
-			<pre className="overflow-x-auto p-5 font-mono text-sm leading-7 text-neutral-300">
-				<code className="text-gray-400 text-xs md:text-sm">{children}</code>
-			</pre>
-		</div>
-	);
-};
+const stacks = {
+	"react-hook-form": {
+		label: "React Hook Form",
+		Component: ReactHookForm,
+		ecosystem: ["React Hook Form", "Zod", "TypeScript"],
+	},
+	formik: {
+		label: "Formik",
+		Component: Formik,
+		ecosystem: ["Formik", "Zod", "TypeScript"],
+	},
+} as const;
+
+type StackKey = keyof typeof stacks;
 
 export default function ReactFormKit() {
+	const [formStack, setFormStack] = useState<StackKey>("react-hook-form");
+
+	const selectedStack = stacks[formStack];
+	const Documentation = selectedStack.Component;
+
 	return (
-		<section className="mx-auto max-w-4xl md:px-6 py-24">
-			{/* Header */}
-			<header className="mb-16">
+		<section className="mx-auto max-w-4xl px-6 py-24">
+			<header className="mb-20">
 				<p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-neutral-400">
 					Package Documentation
 				</p>
 
-				<h1 className="text-4xl font-medium tracking-[-0.045em] text-neutral-950 sm:text-5xl dark:text-white">
+				<h1 className="max-w-3xl text-4xl font-medium tracking-[-0.045em] text-neutral-950 sm:text-5xl dark:text-white">
 					Get Started with React Form Kit
 				</h1>
 
@@ -32,7 +58,7 @@ export default function ReactFormKit() {
 					React forms.
 				</p>
 
-				<div className="mt-7 flex flex-wrap items-center gap-4">
+				<div className="mt-8 flex flex-wrap items-center gap-4">
 					<span className="rounded-md border border-neutral-200 bg-neutral-50 px-3 py-1.5 font-mono text-xs text-neutral-600 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-400">
 						@dev-waren/react-form-kit
 					</span>
@@ -47,139 +73,140 @@ export default function ReactFormKit() {
 						<ExternalLink size={13} />
 					</a>
 				</div>
+
+				<div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 border-t border-neutral-200 pt-6 dark:border-neutral-800">
+					<p className="font-mono text-[11px] uppercase tracking-[0.18em] text-neutral-400">
+						Built around
+					</p>
+
+					{selectedStack.ecosystem.map((item) => (
+						<span key={item} className="text-sm text-neutral-500">
+							{item}
+						</span>
+					))}
+				</div>
 			</header>
 
-			<div className="space-y-16">
-				{/* Installation */}
-				<section>
-					<div className="mb-5">
-						<p className="mb-2 font-mono text-xs text-neutral-400">01</p>
+			<div className="space-y-20">
+				{/* Stack selector */}
+				<div className="flex flex-wrap items-center justify-between gap-4">
+					<div>
+						<p className="font-mono text-[11px] uppercase tracking-[0.18em] text-neutral-400">
+							Integration
+						</p>
 
-						<h2 className="text-xl font-medium tracking-tight text-neutral-950 dark:text-white">
-							Installation
-						</h2>
-
-						<p className="mt-2 text-sm leading-6 text-neutral-500">
-							Install the package using your preferred package manager.
+						<p className="mt-2 text-sm text-neutral-500">
+							Choose your form library
 						</p>
 					</div>
 
-					<CodeBlock file="terminal">
-						{"npm install @dev-waren/react-form-kit"}
-					</CodeBlock>
+					<div className="flex rounded-lg border border-neutral-200 p-1 dark:border-neutral-800 gap-1">
+						{(Object.keys(stacks) as StackKey[]).map((key) => {
+							const isActive = formStack === key;
+
+							return (
+								<button
+									key={key}
+									type="button"
+									onClick={() => setFormStack(key)}
+									aria-pressed={isActive}
+									className={[
+										"rounded-md px-3 py-2 text-sm transition",
+										isActive
+											? "bg-neutral-900 text-white dark:bg-white dark:text-neutral-900"
+											: "text-neutral-500 hover:text-neutral-950 dark:hover:text-white",
+									].join(" ")}
+								>
+									{stacks[key].label}
+								</button>
+							);
+						})}
+					</div>
+				</div>
+
+				{/* Dynamic documentation */}
+				<Documentation />
+
+				{/* Support */}
+				<section className="border-t border-neutral-200 pt-10 dark:border-neutral-800">
+					<div className="flex flex-col justify-between gap-6 sm:flex-row sm:items-center">
+						<div>
+							<p className="mb-2 font-mono text-[11px] uppercase tracking-[0.18em] text-neutral-400">
+								Support the project
+							</p>
+
+							<h2 className="text-lg font-medium tracking-tight text-neutral-950 dark:text-white">
+								Enjoying React Form Kit?
+							</h2>
+
+							<p className="mt-2 max-w-md text-sm leading-6 text-neutral-500">
+								A GitHub star helps the project gain visibility and reach more
+								developers.
+							</p>
+						</div>
+
+						<a
+							href="https://github.com/devwaren/devwaren-react-form-kit"
+							target="_blank"
+							rel="noreferrer"
+							className="inline-flex shrink-0 items-center gap-2 rounded-lg border border-neutral-200 px-4 py-2.5 text-sm font-medium text-neutral-700 transition hover:border-neutral-400 hover:bg-neutral-50 dark:border-neutral-800 dark:text-neutral-300 dark:hover:border-neutral-600 dark:hover:bg-neutral-900"
+						>
+							<Star size={15} />
+							Star on GitHub
+							<ExternalLink size={13} />
+						</a>
+					</div>
 				</section>
 
-				{/* Quick Start */}
-				<section>
-					<div className="mb-8">
-						<p className="mb-2 font-mono text-xs text-neutral-400">02</p>
+				{/* References */}
+				<footer className="border-t border-neutral-200 pt-10 dark:border-neutral-800">
+					<div className="mb-7">
+						<p className="mb-2 font-mono text-[11px] uppercase tracking-[0.18em] text-neutral-400">
+							References
+						</p>
 
-						<h2 className="text-xl font-medium tracking-tight text-neutral-950 dark:text-white">
-							Quick Start
+						<h2 className="text-lg font-medium tracking-tight text-neutral-950 dark:text-white">
+							Built on established tools
 						</h2>
 
-						<p className="mt-2 text-sm leading-6 text-neutral-500">
-							Build a validated form using schemas, reusable fields, and the
-							provided form utilities.
+						<p className="mt-2 max-w-xl text-sm leading-6 text-neutral-500">
+							React Form Kit builds upon reliable tools from the React and
+							TypeScript ecosystem.
 						</p>
 					</div>
 
-					<div className="space-y-6">
-						<CodeBlock file="login-schema.ts">
-							{`import { z } from "@dev-waren/react-form-kit";
+					<div className="grid gap-3 sm:grid-cols-3">
+						{references.map((reference) => (
+							<a
+								key={reference.name}
+								href={reference.href}
+								target="_blank"
+								rel="noreferrer"
+								className="group flex items-center justify-between rounded-xl border border-neutral-200 px-4 py-4 transition hover:border-neutral-400 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:border-neutral-600 dark:hover:bg-neutral-900/50"
+							>
+								<div>
+									<p className="text-sm font-medium text-neutral-900 dark:text-neutral-200">
+										{reference.name}
+									</p>
 
-const schema = {
-  login: z.object({
-    email: z.string().email(),
-    password: z.string().min(8),
-  }),
-};`}
-						</CodeBlock>
+									<p className="mt-1 text-xs text-neutral-500">
+										{reference.description}
+									</p>
+								</div>
 
-						<CodeBlock file="useLoginForm.ts">
-							{`import { useFormSettings } from "@dev-waren/react-form-kit/hook-form";
-import { schema } from "./validation/login-schema.ts"
-
-const useLoginForm = () => {
-  const form = useFormSettings({
-    schema: schema.login,
-    defaultValues: {
-      email: "",
-      password: "",
-    },
-    clearFields: ["email", "password"],
-    onSubmit: (data) => {
-      console.log("Submitted data:", data);
-    },
-  });
-
-  return { form };
-};`}
-						</CodeBlock>
-
-						<CodeBlock file="fields.ts">
-							{`export const fields = [
-  {
-    name: "email",
-    placeholder: "Enter your email",
-    type: "email",
-  },
-  {
-    name: "password",
-    placeholder: "Enter password",
-    type: "password",
-  },
-];`}
-						</CodeBlock>
-
-						<CodeBlock file="components/Input.tsx">
-							{`import type { ComponentProps } from "react";
-import { useInput } from "@dev-waren/react-form-kit/hook-form"
-
-type Props = ComponentProps<"input">;
-
-export default function Input(props: Props) {
-  const { register, isError, error } = useInput(props.name);
-
-  return (<div className="space-y-2">
-            <input {...register} {...props} />
-            { isError && <p className="text-red-600">{ error }</p>}
-        </div>)
-}`}
-						</CodeBlock>
-
-						<CodeBlock file="Login.tsx">
-							{`import {
-  Mapper,
-} from "@dev-waren/react-form-kit";
- import { Form } from "@dev-waren/react-form-kit/hook-form";
-
-import Input from "./components/Input";
-import { fields } from "./fields";
-import { useLoginForm } from "./hooks/useLoginForm";
-
-export default function LoginForm() {
-  const { form } = useLoginForm();
-
-  return (
-    <Form {...form}>
-      <Mapper
-        listFor="login form"
-        items={fields}
-        className="space-y-2"
-      >
-        {(field) => <Input {...field} />}
-      </Mapper>
-
-      <button type="submit">
-        Login
-      </button>
-    </Form>
-  );
-}`}
-						</CodeBlock>
+								<ExternalLink
+									size={14}
+									className="text-neutral-400 transition group-hover:text-neutral-900 dark:group-hover:text-white"
+								/>
+							</a>
+						))}
 					</div>
-				</section>
+
+					<div className="mt-8 text-xs text-neutral-400 flex gap-2 items-center">
+						React Form Kit is part of the open-source React ecosystem. made with{" "}
+						<Heart />
+					</div>
+				</footer>
 			</div>
 		</section>
 	);

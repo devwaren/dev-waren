@@ -212,3 +212,137 @@ body {
 		black 180deg 360deg
 	);
 }
+
+.code-block__syntax {
+	margin: 0 !important;
+	padding: 24px !important;
+	background: #1e1e1e !important;
+	color: #d4d4d4 !important;
+	font-family:
+		"SFMono-Regular",
+		Consolas,
+		"Liberation Mono",
+		Menlo,
+		monospace !important;
+	font-size: 14px !important;
+	font-weight: 400 !important;
+	line-height: 1.7 !important;
+	letter-spacing: 0 !important;
+	tab-size: 2;
+	overflow-x: auto;
+	-webkit-font-smoothing: auto;
+	text-rendering: optimizeLegibility;
+}
+
+.code-block__syntax code {
+	font-family: inherit !important;
+	font-size: inherit !important;
+	line-height: inherit !important;
+	color: inherit;
+	background: transparent !important;
+}
+
+.code-block__syntax {
+	margin: 0 !important;
+	padding: 24px !important;
+
+	background: #1e1e1e !important;
+	color: #d4d4d4 !important;
+
+	font-family:
+		"JetBrains Mono",
+		"SFMono-Regular",
+		Consolas,
+		"Liberation Mono",
+		Menlo,
+		monospace !important;
+
+	font-size: 13px !important;
+	font-weight: 400 !important;
+	line-height: 1.8 !important;
+	letter-spacing: 0 !important;
+
+	tab-size: 2;
+	overflow-x: auto;
+
+	/* Avoid blurry/thin rendering */
+	-webkit-font-smoothing: auto;
+	-moz-osx-font-smoothing: auto;
+	text-rendering: geometricPrecision;
+}
+
+.code-block__syntax code {
+	display: block;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	font-family: inherit !important;
+	font-size: inherit !important;
+	font-weight: inherit !important;
+	line-height: inherit !important;
+
+	background: transparent !important;
+	color: inherit !important;
+	text-shadow: none !important;
+}
+
+/* Reset possible inherited effects */
+.code-block__syntax,
+.code-block__syntax * {
+	text-shadow: none !important;
+	box-shadow: none;
+}
+
+/* Syntax colors */
+.code-block__syntax .token.comment {
+	color: #6a9955;
+}
+
+.code-block__syntax .token.keyword {
+	color: #c586c0;
+}
+
+.code-block__syntax .token.string {
+	color: #ce9178;
+}
+
+.code-block__syntax .token.function {
+	color: #dcdcaa;
+}
+
+.code-block__syntax .token.class-name {
+	color: #4ec9b0;
+}
+
+.code-block__syntax .token.punctuation {
+	color: #d4d4d4;
+}
+
+.code-block__syntax .token.operator {
+	color: #d4d4d4;
+}
+
+.code-block__syntax .token.parameter {
+	color: #9cdcfe;
+}
+
+.code-block__syntax .token.property {
+	color: #9cdcfe;
+}
+
+.code-block__syntax .token.number,
+.code-block__syntax .token.boolean {
+	color: #b5cea8;
+}
+
+.code-block__syntax .token.tag {
+	color: #569cd6;
+}
+
+.code-block__syntax .token.attr-name {
+	color: #9cdcfe;
+}
+
+* {
+	-webkit-font-smoothing: antialiased;
+}

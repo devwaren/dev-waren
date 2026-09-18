@@ -1,5 +1,6 @@
 import { Mapper } from "@dev-waren/react-form-kit";
 import { Link } from "@tanstack/react-router";
+import { Menu } from "lucide-react";
 import moment from "moment-timezone";
 import { assets } from "#/assets/index.ts";
 
@@ -34,16 +35,16 @@ export default function Navbar() {
 			<div className="flex gap-4">
 				<img src={assets.devlogo} alt="dev logo" className="w-8 h-8" />
 				<div>
-					<p className="text-gray-600 font-semibold text-2xl">
+					<p className="text-gray-600 font-semibold lg:text-2xl">
 						Waren<span className="text-gray-900">.dev</span>
 					</p>
-					<p className="text-gray-400 text-sm">{manilaTime}</p>
+					<p className="text-gray-400 text-xs md:text-sm">{manilaTime}</p>
 				</div>
 			</div>
 			<Mapper
 				listFor="nav-links"
 				items={links}
-				className="text-gray-500 space-x-4 transition-all duration-500 ease-in"
+				className="text-gray-500 space-x-4 transition-all duration-500 ease-in hidden md:block"
 			>
 				{(link) => (
 					<Link
@@ -60,6 +61,10 @@ export default function Navbar() {
 					</Link>
 				)}
 			</Mapper>
+
+			<button type="button" className="md:hidden">
+				<Menu />
+			</button>
 		</div>
 	);
 }
