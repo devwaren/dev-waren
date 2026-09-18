@@ -4,6 +4,7 @@ import {
 	HeadContent,
 	Scripts,
 } from "@tanstack/react-router";
+import { AnimatedCursor } from "#/shared/components";
 import { MainLayout } from "#/shared/layouts";
 import { assets } from "../assets/index";
 import appCss from "../styles.css?url";
@@ -48,6 +49,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			</head>
 			<body>
 				<MainLayout>{children}</MainLayout>
+				<AnimatedCursor />
 				<Scripts />
 			</body>
 		</html>

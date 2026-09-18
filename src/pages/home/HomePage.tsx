@@ -1,4 +1,3 @@
-import { AnimatedCursor } from "./components";
 import {
 	About,
 	GetInTouch,
@@ -14,7 +13,6 @@ export default function HomePage() {
 			<Hero />
 			<SelectedProjects />
 			<NpmPackages />
-			<AnimatedCursor />
 			<Technologies />
 			<About />
 			<GetInTouch />
