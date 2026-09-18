@@ -1,3 +1,4 @@
+import { Mapper } from "@dev-waren/react-form-kit";
 import { ExternalLink, Heart, Star } from "lucide-react";
 import { useState } from "react";
 import { Formik } from "./formik/Formik";
@@ -194,14 +195,19 @@ export default function ReactFormKit() {
 						</p>
 					</div>
 
-					<div className="grid gap-3 sm:grid-cols-3">
-						{references.map((reference) => (
+					<Mapper
+						listFor="references"
+						items={references}
+						className="grid gap-3 sm:grid-cols-3 text-black"
+						as="div"
+					>
+						{(reference) => (
 							<a
 								key={reference.name}
 								href={reference.href}
 								target="_blank"
 								rel="noreferrer"
-								className="reference-card group flex items-center justify-between rounded-xl border border-neutral-200 px-4 py-4 transition hover:border-neutral-400 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:border-neutral-600 dark:hover:bg-neutral-900/50"
+								className=" group flex items-center justify-between rounded-xl border border-neutral-200 px-4 py-4 transition hover:border-neutral-400 hover:bg-neutral-50 dark:border-neutral-800 dark:hover:border-neutral-600 dark:hover:bg-neutral-900/50"
 							>
 								<div>
 									<p className="text-sm font-medium text-neutral-900 dark:text-neutral-200">
@@ -218,8 +224,8 @@ export default function ReactFormKit() {
 									className="text-neutral-400 transition group-hover:text-neutral-900 dark:group-hover:text-white"
 								/>
 							</a>
-						))}
-					</div>
+						)}
+					</Mapper>
 
 					<div className="mt-8 flex items-center gap-2 text-xs text-neutral-400">
 						React Form Kit is part of the open-source React ecosystem. made with{" "}

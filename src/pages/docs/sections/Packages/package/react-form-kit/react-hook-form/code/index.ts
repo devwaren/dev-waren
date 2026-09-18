@@ -11,12 +11,16 @@ export const block = [
 		label: "Define Your Schema",
 		desc: "Create a type-safe validation schema for your form fields.",
 		file: "validation/login-schema.ts",
-		code: `import { z } from "@dev-waren/react-form-kit";
+		code: `import { z, sanitize } from "@dev-waren/react-form-kit";
 
 export const schema = {
   login: z.object({
-    email: z.string().email(),
-    password: z.string().min(8),
+    email: z.string()
+            .email({ message: "email is required" })
+            .transform(sanitize),
+    password: z.string()
+            .min(8,{ message: "password must be atleast 8 characters long." })
+            .transform(sanitize),
   }),
 };`,
 	},
@@ -113,6 +117,7 @@ export default function LoginForm() {
         listFor="login form"
         items={fields}
         className="space-y-2"
+        as="div"
       >
         {(field) => <Input {...field} />}
       </Mapper>
