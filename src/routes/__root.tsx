@@ -5,6 +5,7 @@ import {
 	Scripts,
 } from "@tanstack/react-router";
 import { MainLayout } from "#/shared/layouts";
+import { assets } from "../assets/index";
 import appCss from "../styles.css?url";
 
 interface MyRouterContext {
@@ -29,6 +30,10 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 			{
 				rel: "stylesheet",
 				href: appCss,
+			},
+			{
+				rel: "icon",
+				href: assets.devlogo,
 			},
 		],
 	}),
