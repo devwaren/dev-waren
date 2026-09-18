@@ -28,15 +28,15 @@ const details = [
 
 export default function About() {
 	return (
-		<div className="flex border-t py-8 items-end-safe gap-6">
-			<div className="flex-1 space-y-8">
+		<div className="flex flex-col md:flex-row border-t py-8 items-end-safe gap-6">
+			<div className="flex-1 space-y-4 md:space-y-8">
 				<p className="text-gray-600 uppercase tracking-widest">About</p>
 				<h2 className="text-4xl text-gray-500 max-w-[80%] leading-12">
 					<span className="text-gray-800">A Developer</span> who cares about
 					<span className="text-gray-800"> Security</span> and{" "}
 					<span className="text-gray-800">Details</span>.
 				</h2>
-				<p className="text-gray-500 max-w-[90%] leading-7">
+				<p className="text-sm md:text-base text-gray-500 max-w-[90%] leading-7">
 					I'm Full Stack Developer with 4 years of experience building web
 					applications. I enjoy discover things and turn it to reality through
 					clean design, solid security best practices and engineering.
@@ -56,7 +56,7 @@ export default function About() {
 				<Mapper
 					listFor="about-me"
 					items={details}
-					className="grid grid-cols-2 gap-4 min-h-[16em]"
+					className="grid md:grid-cols-2 gap-4 min-h-[16em]"
 				>
 					{(item) => (
 						<div className="flex gap-4">
