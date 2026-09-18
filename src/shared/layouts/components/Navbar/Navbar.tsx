@@ -32,7 +32,7 @@ export default function Navbar() {
 
 	return (
 		<div className="border-b border-b-gray-200 p-4 flex items-center justify-between sticky top-0 bg-white z-90">
-			<div className="flex gap-4">
+			<Link to="/" className="flex gap-4">
 				<img src={assets.devlogo} alt="dev logo" className="w-8 h-8" />
 				<div>
 					<p className="text-gray-600 font-semibold lg:text-2xl">
@@ -40,7 +40,7 @@ export default function Navbar() {
 					</p>
 					<p className="text-gray-400 text-xs md:text-sm">{manilaTime}</p>
 				</div>
-			</div>
+			</Link>
 			<Mapper
 				listFor="nav-links"
 				items={links}
