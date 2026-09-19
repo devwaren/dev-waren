@@ -10,7 +10,7 @@ export default function Hero() {
 	return (
 		<section
 			ref={heroRef}
-			className="flex min-h-[30em] flex-col items-center gap-12 overflow-hidden md:flex-row md:gap-8"
+			className="flex min-h-[50em] flex-col items-center gap-12 overflow-hidden md:flex-row md:gap-8"
 		>
 			<div ref={contentRef} className="w-full flex-1 space-y-8">
 				<div className="hero-heading max-w-[90%] text-xl leading-[1.2] text-gray-400 lg:text-5xl">
