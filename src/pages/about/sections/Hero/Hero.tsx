@@ -87,7 +87,7 @@ export default function Hero() {
 								src={assets.devw}
 								alt=""
 								aria-hidden="true"
-								className="block h-full w-full object-contain grayscale"
+								className="block size-full object-contain grayscale"
 								width={120}
 								height={120}
 								loading="lazy"
