@@ -122,6 +122,7 @@ export default function LogoCarousel() {
 							listFor="logo"
 							items={[...logos, ...logos]}
 							className="flex w-max items-center gap-5"
+							as="div"
 						>
 							{(item) => (
 								<div className="marquee-item group/item flex shrink-0 items-center">
