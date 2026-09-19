@@ -63,7 +63,7 @@ export default function Hero() {
 				<img
 					src={assets.devwaren}
 					alt="Dev Waren"
-					className="h-auto max-h-258 w-auto max-w-full object-contain"
+					className="h-auto max-h-128 md:max-h-258 w-auto max-w-full object-contain"
 					loading="eager"
 				/>
 			</div>
