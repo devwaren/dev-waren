@@ -88,6 +88,7 @@ export default function SelectedProjects() {
 					listFor="carousel"
 					items={projects}
 					className="-ml-3 flex items-stretch"
+					as="div"
 				>
 					{(project) => (
 						<div className="min-w-0 flex-[0_0_100%] pl-3 sm:flex-[0_0_50%] lg:flex-[0_0_33.333%]">
