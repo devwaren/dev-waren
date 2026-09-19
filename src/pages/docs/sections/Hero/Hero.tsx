@@ -97,12 +97,22 @@ export default function Hero() {
 
 			<div
 				ref={ringLargeRef}
-				className="pointer-events-none absolute -bottom-32 -right-32 size-112 rounded-full border border-neutral-200/60 dark:border-neutral-800/60"
+				className="pointer-events-none absolute -bottom-32 -right-32 size-112 rounded-full border border-neutral-200/60 dark:border-neutral-800/60 z-[-1]"
 			/>
 
 			<div
 				ref={ringSmallRef}
-				className="pointer-events-none absolute -bottom-20 -right-20 size-80 rounded-full border border-neutral-200/60 dark:border-neutral-800/60"
+				className="pointer-events-none absolute -bottom-20 -right-20 size-80 rounded-full border border-neutral-200/60 dark:border-neutral-800/60 z-[-1]"
+			/>
+
+			<div
+				ref={ringLargeRef}
+				className="pointer-events-none absolute -top-32 -left-32 size-112 rounded-full border border-neutral-200/60 dark:border-neutral-800/60 z-[-1]"
+			/>
+
+			<div
+				ref={ringSmallRef}
+				className="pointer-events-none absolute -top-20 -left-20 size-80 rounded-full border border-neutral-200/60 dark:border-neutral-800/60 z-[-1]"
 			/>
 		</section>
 	);
