@@ -88,6 +88,9 @@ export default function Hero() {
 								alt=""
 								aria-hidden="true"
 								className="block h-full w-full object-contain grayscale"
+								width={120}
+								height={120}
+								loading="lazy"
 							/>
 						</div>
 
