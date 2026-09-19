@@ -19,8 +19,8 @@ export default function Navbar() {
 						src={assets.devlogo}
 						alt="Dev logo"
 						className="size-8"
-						width={32}
-						height={32}
+						width={35}
+						height={40}
 					/>
 
 					<div>
