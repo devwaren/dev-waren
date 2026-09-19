@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from "react";
-import { Navbar } from "./components";
+import { Footer, Navbar } from "./components";
 
 type Props = PropsWithChildren;
 
@@ -8,6 +8,7 @@ export default function MainLayout({ children }: Props) {
 		<main className="max-w-[90%] mx-auto w-full">
 			<Navbar />
 			{children}
+			<Footer />
 		</main>
 	);
 }
