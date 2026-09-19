@@ -17,11 +17,10 @@ export default function Navbar() {
 				<Link to="/" className="flex gap-4" onClick={() => setIsOpen(false)}>
 					<img
 						src={assets.devlogo}
-						alt="dev logo"
-						className="h-8 w-8"
-						width={35}
-						height={40}
-						loading="lazy"
+						alt="Dev logo"
+						className="size-8"
+						width={32}
+						height={32}
 					/>
 
 					<div>
