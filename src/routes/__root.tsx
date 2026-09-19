@@ -7,13 +7,31 @@ import {
 import { AnimatedCursor } from "#/shared/components";
 import { MainLayout } from "#/shared/layouts";
 import { assets } from "../assets/index";
+import { middlewares } from "../libs/server/middlewares";
 import appCss from "../styles.css?url";
 
 interface MyRouterContext {
 	queryClient: QueryClient;
+	tokens: {
+		nonce: string;
+		hmac256: string;
+		hmac512: string;
+	};
 }
 
 export const Route = createRootRouteWithContext<MyRouterContext>()({
+	beforeLoad: ({ context }) => {
+		const { tokens } = context;
+
+		if (!tokens) {
+			throw new Error("Security tokens are not available.");
+		}
+
+		return tokens;
+	},
+	loader: ({ context }) => {
+		return { tokens: context.tokens };
+	},
 	head: () => ({
 		meta: [
 			{
@@ -39,6 +57,18 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 		],
 	}),
 	shellComponent: RootDocument,
+	headers: async (ctx) => {
+		const tokens = ctx.loaderData?.tokens;
+
+		if (!tokens) {
+			return;
+		}
+
+		return {
+			...middlewares.headers(),
+			...middlewares.csp(tokens),
+		};
+	},
 });
 
 function RootDocument({ children }: { children: React.ReactNode }) {
