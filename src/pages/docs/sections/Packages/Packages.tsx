@@ -6,7 +6,7 @@ const packages = [
 	{
 		name: "react-form-kit",
 		description: "Reusable form utilities for modern React applications.",
-		version: "v1.4.19",
+		version: "v1.5.7",
 		category: "React",
 		includes: ["form kits", "Zod", "Zustand"],
 	},
