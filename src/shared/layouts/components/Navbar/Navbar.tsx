@@ -15,7 +15,14 @@ export default function Navbar() {
 		<>
 			<header className="sticky top-0 z-90 flex items-center justify-between border-b border-gray-200 bg-white p-4">
 				<Link to="/" className="flex gap-4" onClick={() => setIsOpen(false)}>
-					<img src={assets.devlogo} alt="dev logo" className="h-8 w-8" />
+					<img
+						src={assets.devlogo}
+						alt="dev logo"
+						className="h-8 w-8"
+						width={30}
+						height={40}
+						loading="lazy"
+					/>
 
 					<div>
 						<p className="font-semibold text-gray-600 lg:text-2xl">

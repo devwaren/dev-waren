@@ -24,6 +24,7 @@ const projects = [
 		description:
 			"A modern pet-focused web platform designed to showcase dog-related services, information, and an engaging user experience.",
 		image: assets.dogranch,
+		url: "https://dogranch.vercel.app",
 		technologies: ["Vanilla TS", "TypeScript", "TanStack Query", "MongoDB"],
 	},
 	{
@@ -31,6 +32,7 @@ const projects = [
 		description:
 			"A lightweight movie discovery platform featuring movie details, latest releases, and a clean, responsive browsing experience.",
 		image: assets.movie,
+		url: "https://movie-app-mtdb.vercel.app/",
 		technologies: ["Vanilla TS", "Zustand", "Tailwind CSS"],
 	},
 ];
