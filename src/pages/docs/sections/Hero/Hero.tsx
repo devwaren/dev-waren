@@ -19,8 +19,8 @@ export default function Hero() {
 			ref={heroRef}
 			className="relative flex min-h-168 items-center overflow-hidden border-b border-neutral-100 px-6 dark:border-neutral-800 dark:bg-neutral-950"
 		>
-			<div className="">
-				<div className="max-w-4xl">
+			<div className="flex flex-col md:flex-row items-center space-y-8 justify-between py-8">
+				<div className="flex-1">
 					<div ref={identityRef} className="mb-8 flex items-center gap-3">
 						<div className="flex size-10 items-center justify-center rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900">
 							<img
@@ -84,6 +84,14 @@ export default function Hero() {
 							npm packages
 						</div>
 					</div>
+				</div>
+
+				<div className="flex-1">
+					<img
+						src={assets.box}
+						alt="box"
+						className="size-full object-contain drop-shadow-[0_24px_20px_rgba(0,0,0,0.18)]"
+					/>
 				</div>
 			</div>
 
