@@ -19,6 +19,10 @@ interface MyRouterContext {
 	};
 }
 
+const isProd = import.meta.env.NODE_ENV === "production";
+
+const cspClassification = isProd ? "Military" : "Enterprise";
+
 export const Route = createRootRouteWithContext<MyRouterContext>()({
 	beforeLoad: ({ context }) => {
 		const { tokens } = context;
@@ -40,6 +44,10 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 			{
 				name: "viewport",
 				content: "width=device-width, initial-scale=1",
+			},
+			{
+				name: "content-security-policy: classification",
+				content: `${cspClassification} CSP`,
 			},
 			{
 				title: "Waren.dev",
