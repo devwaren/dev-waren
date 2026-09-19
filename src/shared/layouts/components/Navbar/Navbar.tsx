@@ -18,9 +18,9 @@ export default function Navbar() {
 					<img
 						src={assets.devlogo}
 						alt="Dev logo"
-						className="size-8"
 						width={35}
 						height={40}
+						loading="lazy"
 					/>
 
 					<div>
