@@ -6,17 +6,17 @@ import { useGetInTouchGSAP } from "./hooks";
 const socials = [
 	{
 		name: "LinkedIn",
-		href: "#",
+		href: "https://www.linkedin.com/in/waren-g-18505b1b7/",
 		icon: LiaLinkedin,
 	},
 	{
 		name: "GitHub",
-		href: "#",
+		href: "https://github.com/devwaren",
 		icon: SiGithub,
 	},
 	{
 		name: "Facebook",
-		href: "#",
+		href: "https://www.facebook.com/rens.34dev",
 		icon: SiFacebook,
 	},
 ];
