@@ -24,7 +24,7 @@ export default function Hero() {
 	return (
 		<section
 			ref={heroRef}
-			className="mx-auto flex min-h-[20em] w-full max-w-[90%] items-center py-8"
+			className="mx-auto flex min-h-[20em] items-center py-8"
 		>
 			<div className="grid w-full items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
 				{/* Content */}
@@ -54,7 +54,7 @@ export default function Hero() {
 					<Mapper
 						listFor="status"
 						items={stats}
-						className="hero-item mt-12 grid grid-cols-2 gap-8 border-t border-gray-200 pt-6 sm:grid-cols-3"
+						className="hero-item mt-12 grid grid-cols-2 gap-8  pt-6 sm:grid-cols-3"
 					>
 						{(item) => (
 							<div>

@@ -19,26 +19,15 @@ export const useFormHook = () => {
 				opacity: 0,
 				y: 35,
 				duration: 0.8,
-			})
-				.from(
-					contentRef.current,
-					{
-						opacity: 0,
-						y: 25,
-						duration: 0.7,
-					},
-					"-=0.45",
-				)
-				.from(
-					".reference-card",
-					{
-						opacity: 0,
-						y: 20,
-						stagger: 0.08,
-						duration: 0.5,
-					},
-					"-=0.25",
-				);
+			}).from(
+				contentRef.current,
+				{
+					opacity: 0,
+					y: 25,
+					duration: 0.7,
+				},
+				"-=0.45",
+			);
 		}, sectionRef);
 
 		return () => ctx.revert();

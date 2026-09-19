@@ -23,7 +23,9 @@ const frameDomains = [
 	// AdSense for Search
 ].join(" ");
 
-const hashes = [].join(" ");
+const hashes = ["'sha256-+1Mm09E2SXgfzdh3+9BFlUlDO5uuWbDRc1LwGhoDI/Q='"].join(
+	" ",
+);
 
 const whiteList = {
 	framedDomains,

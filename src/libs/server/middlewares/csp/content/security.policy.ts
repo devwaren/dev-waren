@@ -30,6 +30,7 @@ const csp = (tokens: Token): CSP => {
 			`'nonce-${nonce}'`,
 			whiteList.hashes,
 			"https://fonts.googleapis.com",
+			"'unsafe-hashes'",
 		].join(" "),
 
 		// Images, including AdSense

@@ -34,7 +34,7 @@ const stacks = {
 		Component: Formik,
 		ecosystem: ["Formik", "Zod", "TypeScript"],
 	},
-} as const;
+};
 
 type StackKey = keyof typeof stacks;
 
@@ -97,11 +97,13 @@ export default function ReactFormKit() {
 						Built around
 					</p>
 
-					{selectedStack.ecosystem.map((item) => (
-						<span key={item} className="text-sm text-neutral-500">
-							{item}
-						</span>
-					))}
+					<Mapper
+						listFor="ecosystem"
+						items={selectedStack.ecosystem}
+						className="flex flex-wrap gap-x-6 items-center"
+					>
+						{(item) => <span className="text-sm text-neutral-500">{item}</span>}
+					</Mapper>
 				</div>
 			</header>
 
