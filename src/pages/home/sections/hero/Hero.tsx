@@ -59,7 +59,13 @@ export default function Hero() {
 				ref={portraitRef}
 				className="flex-1 overflow-hidden rounded-b-4xl relative"
 			>
-				<img src={assets.devwaren} alt="dev-waren" />
+				<img
+					src={assets.devwaren}
+					alt="dev-waren"
+					width={120}
+					height={120}
+					loading="lazy"
+				/>
 			</div>
 		</div>
 	);
