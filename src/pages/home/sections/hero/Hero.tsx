@@ -8,12 +8,12 @@ export default function Hero() {
 		useHeroGSAP();
 
 	return (
-		<div
+		<section
 			ref={heroRef}
-			className="flex min-h-[30em] flex-col items-center overflow-hidden md:flex-row"
+			className="flex min-h-120 flex-col items-center gap-12 overflow-hidden md:flex-row md:gap-8"
 		>
-			<div ref={contentRef} className="flex-1 space-y-8">
-				<div className="hero-heading max-w-[90%] text-xl leading-[1.2em] text-gray-400 lg:text-5xl">
+			<div ref={contentRef} className="w-full flex-1 space-y-8">
+				<div className="hero-heading max-w-[90%] text-xl leading-[1.2] text-gray-400 lg:text-5xl">
 					<p>
 						<span className="text-gray-800">Designing</span> thoughtful digital
 						experiences.
@@ -29,7 +29,7 @@ export default function Hero() {
 
 				<p
 					ref={descriptionRef}
-					className="text-sm text-gray-500 md:text-base lg:text-xl"
+					className="max-w-2xl text-sm leading-relaxed text-gray-500 md:text-base lg:text-xl"
 				>
 					Full Stack Developer focused on scalable web applications, backend
 					systems, and high-performance client–server architectures.
@@ -37,18 +37,19 @@ export default function Hero() {
 
 				<div
 					ref={actionsRef}
-					className="grid gap-2 text-sm md:grid-cols-2 lg:h-12 lg:w-1/2 lg:gap-4 lg:text-base"
+					className="grid w-full max-w-md gap-2 text-sm sm:grid-cols-2 lg:h-12 lg:gap-4 lg:text-base"
 				>
 					<button
 						type="button"
-						className="flex items-center justify-center gap-4 rounded-md bg-black py-2 text-white"
+						className="flex items-center justify-center gap-3 rounded-md bg-black px-4 py-2 text-white transition-opacity hover:opacity-80"
 					>
-						View My Work <MoveRight />
+						View My Work
+						<MoveRight size={18} />
 					</button>
 
 					<Link
 						to="/get-in-touch"
-						className="rounded-md border border-gray-300 py-2 flex items-center justify-center"
+						className="flex items-center justify-center rounded-md border border-gray-300 px-4 py-2 transition-colors hover:bg-gray-50"
 					>
 						Get in Touch
 					</Link>
@@ -57,16 +58,15 @@ export default function Hero() {
 
 			<div
 				ref={portraitRef}
-				className="flex-1 overflow-hidden rounded-b-4xl relative"
+				className="relative flex w-full flex-1 items-end justify-center overflow-hidden rounded-b-[2rem] md:justify-end"
 			>
 				<img
 					src={assets.devwaren}
-					alt="dev-waren"
-					width={120}
-					height={120}
-					loading="lazy"
+					alt="Dev Waren"
+					className="h-auto max-h-128 w-auto max-w-full object-contain"
+					loading="eager"
 				/>
 			</div>
-		</div>
+		</section>
 	);
 }
