@@ -85,7 +85,7 @@ export default function Hero() {
 						>
 							<img
 								src={assets.devw}
-								alt=""
+								alt="dev waren portrait"
 								aria-hidden="true"
 								className="block size-full object-contain grayscale"
 								width={120}
