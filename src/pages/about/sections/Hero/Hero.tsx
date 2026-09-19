@@ -54,7 +54,7 @@ export default function Hero() {
 					<Mapper
 						listFor="status"
 						items={stats}
-						className="hero-item mt-12 grid grid-cols-2 gap-8  pt-6 sm:grid-cols-3"
+						className="hero-item mt-12 grid grid-cols-2 gap-4  pt-6 sm:grid-cols-3"
 					>
 						{(item) => (
 							<div>

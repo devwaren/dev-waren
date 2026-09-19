@@ -47,7 +47,7 @@ export default function SelectedProjects() {
 		<section className="relative space-y-8 bg-gray-100 py-8">
 			<div
 				aria-hidden="true"
-				className="absolute inset-y-0 -left-24 -right-24 -z-10 bg-gray-100"
+				className="absolute inset-0 -left-24 -right-24 z-[-1] bg-gray-100 h-full"
 			/>
 
 			{/* Header */}
