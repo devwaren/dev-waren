@@ -26,9 +26,9 @@ export default function Packages() {
 		<section
 			ref={sectionRef}
 			id="packages"
-			className="border-t border-neutral-200 bg-neutral-50 px-6 py-32 dark:border-neutral-800 dark:bg-neutral-950"
+			className="py-16 dark:border-neutral-800 dark:bg-neutral-950"
 		>
-			<div className="mx-auto max-w-7xl">
+			<div>
 				<div
 					ref={headerRef}
 					className="mb-16 flex flex-col justify-between gap-6 md:flex-row md:items-end"
@@ -56,7 +56,7 @@ export default function Packages() {
 					<Mapper
 						listFor="packages"
 						items={packages}
-						className="divide-y divide-neutral-200 border-y border-neutral-200 dark:divide-neutral-800 dark:border-neutral-800"
+						className="divide-y divide-neutral-100 dark:divide-neutral-800 dark:border-neutral-800"
 					>
 						{(pkg, i) => (
 							<a

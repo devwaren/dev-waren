@@ -17,9 +17,9 @@ export default function Hero() {
 	return (
 		<section
 			ref={heroRef}
-			className="relative flex min-h-168 items-center overflow-hidden border-b border-neutral-200 bg-neutral-50 px-6 dark:border-neutral-800 dark:bg-neutral-950"
+			className="relative flex min-h-168 items-center overflow-hidden border-b border-neutral-100 px-6 dark:border-neutral-800 dark:bg-neutral-950"
 		>
-			<div className="mx-auto w-full max-w-7xl">
+			<div className="">
 				<div className="max-w-4xl">
 					<div ref={identityRef} className="mb-8 flex items-center gap-3">
 						<div className="flex size-10 items-center justify-center rounded-xl border border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900">
