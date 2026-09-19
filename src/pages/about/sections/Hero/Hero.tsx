@@ -24,7 +24,7 @@ export default function Hero() {
 	return (
 		<section
 			ref={heroRef}
-			className="mx-auto flex min-h-[20em] items-center py-8"
+			className="mx-auto flex min-h-[24em] items-center py-8"
 		>
 			<div className="grid w-full items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
 				{/* Content */}
