@@ -51,7 +51,7 @@ export default function Hero() {
 
 					<h1
 						ref={titleRef}
-						className="max-w-4xl text-6xl font-medium tracking-[-0.06em] text-neutral-950 sm:text-7xl lg:text-8xl dark:text-white"
+						className="text-3xl sm:text-5xl font-medium tracking-[-0.06em] text-neutral-950 md:text-7xl lg:text-8xl dark:text-white"
 					>
 						Tools for building
 						<br />
@@ -60,17 +60,17 @@ export default function Hero() {
 
 					<p
 						ref={descriptionRef}
-						className="mt-8 max-w-xl text-lg leading-8 text-neutral-500"
+						className="mt-8 max-w-xl text-sm md:text-lg leading-6 md:leading-8 text-neutral-500"
 					>
 						Explore a collection of reusable packages, utilities, and
 						developer-focused tools built to make modern applications simpler
 						and more reliable.
 					</p>
 
-					<div ref={actionsRef} className="mt-10 flex flex-wrap gap-3">
+					<div ref={actionsRef} className="mt-10 flex flex-wrap gap-3 text-sm">
 						<a
 							href="#packages"
-							className="group inline-flex items-center gap-3 rounded-full bg-neutral-950 px-5 py-3 text-sm font-medium text-white transition hover:bg-neutral-800 dark:bg-white dark:text-neutral-950"
+							className="group inline-flex items-center gap-3 rounded-full bg-neutral-950 px-5 py-3 font-medium text-white transition hover:bg-neutral-800 dark:bg-white dark:text-neutral-950"
 						>
 							Explore packages
 							<ArrowUpRight
