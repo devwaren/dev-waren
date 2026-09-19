@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import { MoveRight } from "lucide-react";
 import { assets } from "#/assets/index.ts";
 import { useHeroGSAP } from "./hooks";
@@ -45,12 +46,12 @@ export default function Hero() {
 						View My Work <MoveRight />
 					</button>
 
-					<button
-						type="button"
-						className="rounded-md border border-gray-300 py-2"
+					<Link
+						to="/get-in-touch"
+						className="rounded-md border border-gray-300 py-2 flex items-center justify-center"
 					>
 						Get in Touch
-					</button>
+					</Link>
 				</div>
 			</div>
 
