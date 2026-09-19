@@ -1,5 +1,5 @@
 import { Mapper } from "@dev-waren/react-form-kit";
-import { ExternalLink, Form, IceCreamCone, Leaf } from "lucide-react";
+import { ExternalLink, Form, Leaf } from "lucide-react";
 
 const packages = [
 	{
@@ -27,15 +27,15 @@ const packages = [
 		github: "#",
 		icon: Leaf,
 	},
-	{
-		name: "@dev-waren/vanilla-ts",
-		description:
-			"A lightweight serverless single-page application built with TypeScript and a modern utility-first design system.",
-		technologies: ["TypeScript", "Tailwind CSS"],
-		npm: "#",
-		github: "#",
-		icon: IceCreamCone,
-	},
+	// {
+	// 	name: "@dev-waren/vanilla-ts",
+	// 	description:
+	// 		"A lightweight serverless single-page application built with TypeScript and a modern utility-first design system.",
+	// 	technologies: ["TypeScript", "Tailwind CSS"],
+	// 	npm: "#",
+	// 	github: "#",
+	// 	icon: IceCreamCone,
+	// },
 ];
 
 export default function NpmPackages() {
