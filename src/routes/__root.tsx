@@ -44,6 +44,14 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
 			{
 				title: "Waren.dev",
 			},
+			{
+				name: "author",
+				content: "Waren Gador",
+			},
+			{
+				name: "description",
+				content: "Waren Gador's Official Website",
+			},
 		],
 		links: [
 			{
