@@ -1,11 +1,18 @@
 import { MoveRight } from "lucide-react";
 import { assets } from "#/assets/index.ts";
+import { useHeroGSAP } from "./hooks";
 
 export default function Hero() {
+	const { heroRef, contentRef, descriptionRef, actionsRef, portraitRef } =
+		useHeroGSAP();
+
 	return (
-		<div className="min-h-[30em] overflow-hidden flex flex-col md:flex-row items-center">
-			<div className="flex-1 space-y-8">
-				<div className="max-w-[90%] text-gray-400 text-xl lg:text-5xl leading-[1.2em]">
+		<div
+			ref={heroRef}
+			className="flex min-h-[30em] flex-col items-center overflow-hidden md:flex-row"
+		>
+			<div ref={contentRef} className="flex-1 space-y-8">
+				<div className="hero-heading max-w-[90%] text-xl leading-[1.2em] text-gray-400 lg:text-5xl">
 					<p>
 						<span className="text-gray-800">Designing</span> thoughtful digital
 						experiences.
@@ -18,27 +25,39 @@ export default function Hero() {
 						</span>
 					</h2>
 				</div>
-				<p className="text-gray-500 text-sm md:text-base lg:text-xl">
+
+				<p
+					ref={descriptionRef}
+					className="text-sm text-gray-500 md:text-base lg:text-xl"
+				>
 					Full Stack Developer focused on scalable web applications, backend
 					systems, and high-performance client–server architectures.
 				</p>
 
-				<div className="grid md:grid-cols-2 lg:w-1/2 lg:h-12 gap-2 lg:gap-4 text-sm lg:text-base my-4 md:my-0">
+				<div
+					ref={actionsRef}
+					className="grid gap-2 text-sm md:grid-cols-2 lg:h-12 lg:w-1/2 lg:gap-4 lg:text-base"
+				>
 					<button
 						type="button"
-						className="bg-black text-white rounded-md flex items-center justify-center gap-4 py-2"
+						className="flex items-center justify-center gap-4 rounded-md bg-black py-2 text-white"
 					>
 						View My Work <MoveRight />
 					</button>
+
 					<button
 						type="button"
-						className="border border-gray-300 rounded-md py-2"
+						className="rounded-md border border-gray-300 py-2"
 					>
 						Get in Touch
 					</button>
 				</div>
 			</div>
-			<div className="flex-1 rounded-b-4xl overflow-hidden relative">
+
+			<div
+				ref={portraitRef}
+				className="flex-1 overflow-hidden rounded-b-4xl relative"
+			>
 				<img src={assets.devwaren} alt="dev-waren" />
 			</div>
 		</div>
