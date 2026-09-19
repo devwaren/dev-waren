@@ -71,6 +71,7 @@ const csp = (tokens: Token): CSP => {
 
 		// Trusted Types
 		"trusted-types default tanstack goog#html ContributorServingResponseClientJs#html 'allow-duplicates'",
+		"require-trusted-types-for 'scripts'",
 	];
 
 	return {
