@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { LiaLinkedin } from "react-icons/lia";
 import { SiFacebook, SiGithub } from "react-icons/si";
+import { useGetInTouchGSAP } from "./hooks";
 
 const socials = [
 	{
@@ -21,10 +22,13 @@ const socials = [
 ];
 
 export default function GetInTouch() {
+	const { sectionRef, labelRef, titleRef, descriptionRef, socialsRef } =
+		useGetInTouchGSAP();
+
 	return (
-		<section className="flex min-h-[40em] items-center">
+		<section ref={sectionRef} className="flex min-h-[40em] items-center">
 			<div className="max-w-4xl space-y-6">
-				<div className="flex items-center gap-3">
+				<div ref={labelRef} className="flex items-center gap-3">
 					<div className="h-px w-10 bg-gray-400" />
 
 					<p className="text-xs font-semibold uppercase tracking-[0.25em] text-gray-400">
@@ -32,18 +36,28 @@ export default function GetInTouch() {
 					</p>
 				</div>
 
-				<h2 className="text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+				<h2
+					ref={titleRef}
+					className="text-5xl font-semibold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl"
+				>
 					Connect, Collaborate
 					<br />
 					or Just Say <span className="text-gray-400">&quot;Hello&quot;</span>
 				</h2>
 
-				<p className="max-w-2xl text-lg leading-relaxed text-gray-400">
+				<p
+					ref={descriptionRef}
+					className="max-w-2xl text-lg leading-relaxed text-gray-400"
+				>
 					Have a project in mind or simply want to start a conversation?
 					I&apos;d love to hear from you.
 				</p>
 
-				<nav aria-label="Social links" className="flex flex-wrap gap-3 pt-4">
+				<nav
+					ref={socialsRef}
+					aria-label="Social links"
+					className="flex flex-wrap gap-3 pt-4"
+				>
 					{socials.map(({ name, href, icon: Icon }) => (
 						<a
 							key={name}
