@@ -102,6 +102,8 @@ export default function SelectedProjects() {
 										src={project.image}
 										alt={project.title}
 										className="aspect-video w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+										width={100}
+										height={80}
 									/>
 								</div>
 
