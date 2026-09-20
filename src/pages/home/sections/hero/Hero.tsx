@@ -22,7 +22,7 @@ export default function Hero() {
 					<h2>
 						Scalable <span className="text-gray-800">UI/UX systems</span> and{" "}
 						<span className="text-gray-800">
-							high-performance SSR web applications.
+							high-performance full stack web applications.
 						</span>
 					</h2>
 				</div>
@@ -31,8 +31,9 @@ export default function Hero() {
 					ref={descriptionRef}
 					className="max-w-2xl text-sm leading-relaxed text-gray-500 md:text-base lg:text-xl"
 				>
-					Full Stack Developer focused on scalable web applications, backend
-					systems, and high-performance client–server architectures.
+					Full Stack Developer building scalable web applications, developer
+					tools, and reliable client–server systems with a focus on performance
+					and maintainability.
 				</p>
 
 				<div
