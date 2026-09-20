@@ -13,7 +13,7 @@ const packages = [
 	{
 		name: "mongodb",
 		description: "Typed MongoDB utilities for Server Only applications.",
-		version: "v1.0.0",
+		version: "v1.0.38",
 		category: "Database",
 		includes: ["Mongodb"],
 	},
