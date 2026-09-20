@@ -1,6 +1,7 @@
 import { Mapper } from "@dev-waren/react-form-kit";
 import { ExternalLink, Heart, Star } from "lucide-react";
 import { useState } from "react";
+import { assets } from "#/assets/index.ts";
 import { Formik } from "./formik/Formik";
 import { useFormHook } from "./hooks";
 import { ReactHookForm } from "./react-hook-form/react-hook-form";
@@ -62,6 +63,8 @@ export default function ReactFormKit() {
 
 	return (
 		<section ref={sectionRef} className="mx-auto max-w-4xl px-6 py-24">
+			<img src={assets.form} alt="form" className="w-80 py-4" />
+
 			<header ref={headerRef} className="mb-20">
 				<p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-neutral-400">
 					Package Documentation

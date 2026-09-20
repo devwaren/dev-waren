@@ -1,5 +1,6 @@
 import { Mapper } from "@dev-waren/react-form-kit";
 import { ExternalLink, Heart, Star } from "lucide-react";
+import { assets } from "#/assets/index.ts";
 import { CodeBlock } from "#/shared/components/index.ts";
 import { block } from "./code/index";
 
@@ -24,6 +25,7 @@ const references = [
 export default function Mongodb() {
 	return (
 		<section className="mx-auto max-w-4xl px-6 py-24">
+			<img src={assets.mongo} alt="form" className="w-80 py-4" />
 			<p className="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-neutral-400">
 				Package Documentation
 			</p>
