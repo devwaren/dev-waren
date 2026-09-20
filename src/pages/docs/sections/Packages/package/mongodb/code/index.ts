@@ -48,7 +48,9 @@ export const movieSchema = z.object({
 	genres: z
 		.array(z.string())
 		.min(1),
-});`,
+});
+
+export type MovieSchema = z.infer<typeof movieSchema>;`,
 	},
 
 	{
